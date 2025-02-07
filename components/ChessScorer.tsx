@@ -41,7 +41,7 @@ export default function ChessScorer() {
 
   return (
     <div className="p-4">
-      <div className="grid grid-cols-1 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         {/* White Player */}
         <div className="border rounded-lg p-4">
           <h3 className="text-xl mb-3">White Pieces taken by Black</h3>
