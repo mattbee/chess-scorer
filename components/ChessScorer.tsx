@@ -45,15 +45,15 @@ export default function ChessScorer() {
         {/* White Player */}
         <div className="border rounded-lg p-4">
           <h3 className="text-xl mb-3">White Pieces</h3>
-          <div className="flex flex-wrap justify-between">
+          <div className="flex flex-wrap justify-between md:justify-start md:gap-2">
             {pieces.map((piece) => (
               <button
                 key={`white-${piece.name}`}
                 onClick={() => addToScore('white', piece)}
                 className="p-2 border rounded bg-black hover:bg-gray-700"
               >
-                <div className="text-3xl lg:text-5xl text-white leading-none">{piece.symbol}</div>
-                <div className="text-white text-sm">{piece.name}</div>
+                <div className="text-3xl md:text-4xl text-white leading-none">{piece.symbol}</div>
+                <div className="text-white text-sm md:text-2xl">{piece.name}</div>
               </button>
             ))}
           </div>
@@ -73,15 +73,15 @@ export default function ChessScorer() {
         {/* Black Player */}
         <div className="border rounded-lg p-4">
           <h3 className="text-xl mb-3">Black Pieces</h3>
-          <div className="flex flex-wrap justify-between">
+          <div className="flex flex-wrap justify-between md:justify-start md:gap-2">
             {pieces.map((piece) => (
               <button
                 key={`black-${piece.name}`}
                 onClick={() => addToScore('black', piece)}
                 className="p-2 border rounded hover:bg-gray-100 bg-white"
               >
-                <div className="text-3xl lg:text-5xl text-black leading-none">{piece.symbol}</div>
-                <div className="text-black text-sm">{piece.name}</div>
+                <div className="text-3xl md:text-4xl text-black leading-none">{piece.symbol}</div>
+                <div className="text-black text-sm  md:text-2xl">{piece.name}</div>
               </button>
             ))}
           </div>
