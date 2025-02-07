@@ -44,7 +44,7 @@ export default function ChessScorer() {
       <div className="grid grid-cols-1 gap-2">
         {/* White Player */}
         <div className="border rounded-lg p-4">
-          <h3 className="text-xl mb-3">White Pieces</h3>
+          <h3 className="text-xl mb-3">White Pieces taken by Black</h3>
           <div className="flex flex-wrap justify-between md:justify-start md:gap-2">
             {pieces.map((piece) => (
               <button
@@ -72,7 +72,7 @@ export default function ChessScorer() {
 
         {/* Black Player */}
         <div className="border rounded-lg p-4">
-          <h3 className="text-xl mb-3">Black Pieces</h3>
+          <h3 className="text-xl mb-3">Black Pieces taken by White</h3>
           <div className="flex flex-wrap justify-between md:justify-start md:gap-2">
             {pieces.map((piece) => (
               <button
@@ -99,6 +99,15 @@ export default function ChessScorer() {
         </div>
       </div>
       <div className="mt-8 text-center">
+        {scores.white !== scores.black && (
+          <div className="text-2xl font-bold mb-4">
+            {scores.white > scores.black ? (
+              <span className="text-gray-700">Black is winning by {scores.white - scores.black} points!</span>
+            ) : (
+              <span className="text-gray-900">White is winning by {scores.black - scores.white} points!</span>
+            )}
+          </div>
+        )}
         <button
           onClick={resetGame}
           className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
